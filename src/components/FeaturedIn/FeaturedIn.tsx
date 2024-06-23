@@ -5,28 +5,23 @@ import './featured-in.scss';
 const featuredInItems = [
 	{
 		id: 'entrepreneur',
-		imgUrl: 'v1510954356/marketing_site/home_page/logo-entrepreneur.png',
-		alt: 'Entrepreneur',
+		label: 'Entrepreneur',
 	},
 	{
 		id: 'huffpost',
-		imgUrl: 'v1510954356/marketing_site/home_page/logo-huffpost.png',
-		alt: 'HuffPost',
+		label: 'HuffPost',
 	},
 	{
 		id: 'fortune',
-		imgUrl: 'v1510954356/marketing_site/home_page/logo-fortune.png',
-		alt: 'Fortune',
+		label: 'Fortune',
 	},
 	{
 		id: 'fastcompany',
-		imgUrl: 'v1510954356/marketing_site/home_page/logo-fast-company.png',
-		alt: 'Fast Company',
+		label: 'Fast Company',
 	},
 	{
 		id: 'bustle',
-		imgUrl: 'v1510954356/marketing_site/home_page/logo-bustle.png',
-		alt: 'Bustle',
+		label: 'Bustle',
 	},
 ];
 
@@ -36,7 +31,7 @@ const FeaturedIn = () => {
 			<ul className="featured-in__list">
 				{featuredInItems.map((item) => (
 					<li key={item.id} className="featured-in__list-item">
-						{item.imgUrl}
+						{item.label}
 					</li>
 				))}
 			</ul>
