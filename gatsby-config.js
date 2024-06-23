@@ -10,28 +10,19 @@ const { languages, defaultLanguage } = require('./languages');
 
 const localesPath = path.join(__dirname, 'locales');
 
-const breakPoints = {
-	medium: 768,
-	large: 992,
-	xlarge: 1200,
-};
-
-if (process.env.STAGING) {
-	require('dotenv').config({
-		path: `.env.${process.env.NODE_ENV}.staging`,
-	});
-} else {
-	require('dotenv').config({
-		path: `.env.${process.env.NODE_ENV}`,
-	});
-}
+//Config the relavent environment variables file
+require('dotenv').config({
+	path: `.env.${process.env.HB_ENV}`,
+});
 
 module.exports = {
 	siteMetadata: {
 		title: `HoneyBook`,
 		description: `HoneyBook Marketing website`,
+		siteUrl: `https://www.honeybook.com`,
 		author: ``,
 	},
+	trailingSlash: 'never',
 	plugins: [
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -58,17 +49,7 @@ module.exports = {
 					keySeparator: '.',
 					nsSeparator: '.',
 				},
-				pages: [
-					// {
-					//   matchPath: "/:lang?/blog/:uid",
-					//   getLanguageFromPath: true,
-					//   excludeLanguages: ["es"],
-					// },
-					// {
-					//   matchPath: "/preview",
-					//   languages: ["en"],
-					// },
-				],
+				pages: [],
 			},
 		},
 		`gatsby-plugin-react-helmet`,
@@ -85,21 +66,32 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `HoneyBook: Client Management Software for Small Businesses`,
-				short_name: `honeybook`,
+				name: `HoneyBook: Clientflow Management for Independent Businesses`,
+				short_name: `HoneyBook`,
 				start_url: `/`,
-				background_color: `#000021`,
-				theme_color: `#000021`,
+				background_color: `#131416FF`,
+				theme_color: `#131416FF`,
 				display: `standalone`,
-				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+				icon: `src/images/favicon.hb.png`,
+				icon_options: {
+					purpose: `any maskable`,
+				},
+				cache_busting_mode: `name`,
 			},
 		},
 		`gatsby-plugin-typescript`,
 		{
-			resolve: 'gatsby-plugin-web-font-loader',
+			resolve: 'gatsby-plugin-webfonts',
 			options: {
-				google: {
-					families: ['Montserrat:400,600,700,800&display=swap'],
+				fonts: {
+					google: [
+						{
+							family: 'Montserrat',
+							variants: ['400', '600', '700', '800'],
+							fontDisplay: 'swap',
+							strategy: 'cdn', // 'base64' || 'selfHosted'
+						},
+					],
 				},
 			},
 		},
@@ -112,19 +104,6 @@ module.exports = {
 				},
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-breakpoints',
-			options: {
-				queries: {
-					medium: `(max-width: ${breakPoints.medium}px)`,
-					large: `(max-width: ${breakPoints.large}px)`,
-					xlarge: `(max-width: ${breakPoints.xlarge}px)`,
-					largeUp: `(min-width: ${breakPoints.large}px)`,
-					mediumUp: `(min-width: ${breakPoints.medium}px)`,
-					// For some reason, business personality test has this query
-					bptestQuery: `(min-width: 800px)`,
-				},
-			},
-		},
+		`gatsby-transformer-gitinfo`,
 	],
 };
