@@ -58,11 +58,7 @@ module.exports = {
 			'@typescript-eslint/parser': ['.js', '.jsx', '.ts', '.tsx'],
 		},
 		'import/resolver': {
-			typescript: {},
-			alias: {
-				map: [['@honeybook-ui', './src/components/honeybook-ui']],
-				extensions: ['.js', '.jsx', '.ts', '.tsx'],
-			},
+			typescript: {}
 		},
 	},
 	env: {

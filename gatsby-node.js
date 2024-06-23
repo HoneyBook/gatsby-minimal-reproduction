@@ -4,22 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-
-const path = require('path');
-
 // eslint-disable-next-line import/extensions
 exports.createPages = require('./create-pages.ts').default;
 
-exports.onCreateWebpackConfig = ({ actions, stage, getConfig, plugins }) => {
-	actions.setWebpackConfig({
-		resolve: {
-			alias: {
-				'@honeybook-ui': path.resolve(__dirname, 'src/components/honeybook-ui'),
-			},
-		},
-	});
-
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
 	// Silence mini css extract order errors
 	if (stage === 'build-javascript' || stage === 'develop') {
 		const config = getConfig();
@@ -31,9 +19,5 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig, plugins }) => {
 		}
 
 		actions.replaceWebpackConfig(config);
-
-		// actions.setWebpackConfig({
-		// 	plugins: [plugins.provide({ process: 'process/browser' })],
-		// });
 	}
 };
