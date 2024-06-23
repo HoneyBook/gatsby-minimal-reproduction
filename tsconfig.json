@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"jsx": "react-jsx",
+		"lib": ["dom", "es2017"],
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": false,
+		"resolveJsonModule": true,
+		"noUnusedLocals": true,
+		"experimentalDecorators": false,
+		"importsNotUsedAsValues": "error",
+		"suppressImplicitAnyIndexErrors": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": false,
+		"paths": {
+			"@honeybook-ui/*": ["./src/components/honeybook-ui/*"]
+		}
+	},
+	"exclude": ["node_modules", "public", ".cache"]
+}

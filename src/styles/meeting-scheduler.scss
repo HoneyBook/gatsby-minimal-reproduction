@@ -1,0 +1,67 @@
+.scheduler-page {
+	&__booking-clients {
+		padding: 80px 20px 60px;
+		position: relative;
+		margin-top: 40px;
+
+		&:before {
+			content: '';
+			background: url('//res.cloudinary.com/honeybook/image/upload/f_auto,fl_lossy,q_auto/v1578529665/marketing_site/account-migration/reports.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 114px;
+			height: 96px;
+			position: absolute;
+			top: -50px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.feature-block {
+			&__text-title-pre {
+				font-size: 12px;
+				font-weight: 300;
+			}
+
+			&__text-title {
+				font-size: 27px;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.branded-experience,
+	.increase-chance-of-winning {
+		padding: 0 20px;
+	}
+
+	.feature-block__divider {
+		border-bottom: 1px solid #d1d3da;
+		margin: 0px 10% 40px;
+	}
+
+	.image-text-elements-block__container {
+		.image-text-element {
+			margin: 28px 17px;
+		}
+	}
+
+	.faq-container {
+		&__faq,
+		&__contact-link {
+			a {
+				color: grey;
+			}
+		}
+	}
+
+	.blog-links {
+		padding-bottom: 80px;
+
+		.feature-block__text-title {
+			max-width: 600px;
+			min-width: auto;
+			margin: 0 auto 40px;
+		}
+	}
+}

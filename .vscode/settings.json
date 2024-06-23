@@ -1,0 +1,37 @@
+{
+	"javascript.preferences.importModuleSpecifier": "relative",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"npm.packageManager": "npm",
+	"eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json"],
+	"eslint.packageManager": "npm",
+	"eslint.options": {
+		"configFile": "./.eslintrc.js"
+	},
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"stylelint.enable": true,
+	"stylelint.packageManager": "npm",
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true,
+		"source.fixAll": true,
+		"source.addMissingImports": true
+	},
+	"i18n-ally.localesPaths": ["locales"],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

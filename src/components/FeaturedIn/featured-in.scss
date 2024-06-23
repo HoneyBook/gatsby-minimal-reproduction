@@ -1,0 +1,41 @@
+.featured-in {
+	background: white;
+	padding: 10px 20px;
+	max-width: 1150px;
+	margin: auto;
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding-left: 0;
+
+		&-item {
+			width: 120px;
+			margin: 10px;
+			text-align: center;
+			flex-basis: 25%;
+			display: flex;
+			align-items: center;
+		}
+
+		&-item .media-element {
+			display: flex;
+			align-items: center;
+
+			img {
+				display: inline-block;
+				width: 100%;
+				max-width: 110px;
+				opacity: 0.6;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 18px;
+		color: grey;
+		white-space: nowrap;
+	}
+}

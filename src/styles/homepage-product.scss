@@ -1,0 +1,16 @@
+.product-home {
+	overflow-x: hidden;
+
+	.pricing-block {
+		background: white;
+		padding-top: 0;
+	}
+
+	.media-element img {
+		max-width: 100%;
+	}
+
+	.feature-block__container {
+		padding: 0 20px;
+	}
+}
